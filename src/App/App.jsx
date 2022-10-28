@@ -1,19 +1,37 @@
 import logo from './logo.svg';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+
+import Education from "./Education/Education";
+import Portfolio from "./Portfolio/Portfolio";
+import Contact from "./Contact/Contact";
 import "./App.scss";
 
 const menu = ["home", "education", "portfolio", "contact"]
 
 const App = () => {
-  const [page,loadPage] = useState();
-  const [menuState, toggleMenu] = useState(false);
-
   const navigate = useNavigate();
+  const [menuState, toggleMenu] = useState(false);
+  const [titleState, minimiseTitle] = useState(false);
+
+  useEffect(()=> {
+    window.addEventListener("scroll", () => {
+      window.pageYOffset===0?
+        minimiseTitle(true): minimiseTitle(false);
+      toggleMenu(false);
+    })
+    return() => {
+      window.removeEventListener("scroll",() => {
+        window.pageYOffset===0?
+          minimiseTitle(true): minimiseTitle(false);
+        toggleMenu(false);
+      })
+    }
+  },[])
   return (
     <div className="App">
       <header>
-        <div id="hamburger-menu">
+        <div id="hamburger-menu" >
           <input id="hamburger--toggle" className="hamburger" type="checkbox"
             checked={menuState}
             readOnly
@@ -29,24 +47,24 @@ const App = () => {
             </div>
           </label>
         </div>
-        <div id="logo">Rohit Naidu</div>
       </header>
-      <div id="container">
       <nav id="menu" className={menuState? "":"slideOut"}>
         <ul>
           { menu.map((item) => (
-            <label htmlFor = { item }>
-              <li key = { item } >
+            <label htmlFor = { item } key = { item } >
+              <li>
                 <input
                   className="menu"
                   name = "menu"
                   type = "radio"
                   value = { item }
                   id = { item }
-                  checked = { page === item }
+                  checked = { item.index === item }
                   onChange = {() => {
-                    loadPage(item)
-                    (item === "introduction") ? navigate(""):navigate("/" + item)
+                    item === "introduction" ?
+                      navigate("")
+                    : navigate("/" + item);
+                    menuState? toggleMenu(false): toggleMenu(true);
                   }}
                 /> { item.at(0).toUpperCase()+item.slice(1,item.length) }
               </li>
@@ -54,12 +72,20 @@ const App = () => {
             ))}
         </ul>
       </nav>
+      <div id="container">
+        <div id="background">
+          <div id="title">
+            <h1 className={titleState? "move": ""}>Herlast Photography</h1>
+          </div>
+        </div>
         <Routes>
+          <Route path = "/education" element = { <Education /> } key = { document.location.href }  />
+          <Route path = "/portfolio" element = { <Portfolio /> } key = { document.location.href }  />
+          <Route path = "/contact" element = { <Contact /> } key = { document.location.href }  />
           <Route path ="*" element = { <Landing /> }
             key = { document.location.href }
           />
         </Routes>
-        {page}
       </div>
     </div>
   );
