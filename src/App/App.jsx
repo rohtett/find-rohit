@@ -2,32 +2,45 @@ import logo from './logo.svg';
 import {useState, useEffect} from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
+import Home from "./Home/Home";
 import Education from "./Education/Education";
 import Portfolio from "./Portfolio/Portfolio";
 import Contact from "./Contact/Contact";
 import "./App.scss";
 
-const menu = ["home", "education", "portfolio", "contact"]
+const menu = ["home", "education", "portfolio", "contact"];
+const backgrounds = ["flowers", "leaves"]
 
 const App = () => {
   const navigate = useNavigate();
   const [menuState, toggleMenu] = useState(false);
-  const [titleState, minimiseTitle] = useState(false);
+  const [background, nextBackground] = useState(0);
+  const [timer, setTimer] = useState(0);
 
+  const handleClick = ev => {
+    toggleMenu(false);
+  }
+  useEffect(() => {
+    setTimeout(()=> {
+      if (timer===1000) {
+        setTimer(0)
+        nextBackground(background+1>backgrounds.length-1? 0: background+1)
+      } else {
+        setTimer(timer+1);
+      }
+    },10)
+  }, [timer])
   useEffect(()=> {
-    window.addEventListener("scroll", () => {
-      window.pageYOffset===0?
-        minimiseTitle(true): minimiseTitle(false);
-      toggleMenu(false);
-    })
+    const container = document.getElementById("container");
+
+    container.addEventListener("click", handleClick);
+
     return() => {
-      window.removeEventListener("scroll",() => {
-        window.pageYOffset===0?
-          minimiseTitle(true): minimiseTitle(false);
-        toggleMenu(false);
-      })
+      container.removeEventListener("click", handleClick);
+
     }
   },[])
+
   return (
     <div className="App">
       <header>
@@ -73,19 +86,40 @@ const App = () => {
         </ul>
       </nav>
       <div id="container">
-        <div id="background">
-          <div id="title">
-            <h1 className={titleState? "move": ""}>Herlast Photography</h1>
-          </div>
+        <div id="background" className={backgrounds[background]}>
         </div>
-        <Routes>
-          <Route path = "/education" element = { <Education /> } key = { document.location.href }  />
-          <Route path = "/portfolio" element = { <Portfolio /> } key = { document.location.href }  />
-          <Route path = "/contact" element = { <Contact /> } key = { document.location.href }  />
-          <Route path ="*" element = { <Landing /> }
-            key = { document.location.href }
-          />
-        </Routes>
+        <div id="article-wrapper">
+          <div id="bio">
+            <button onClick={() => {
+              setTimer(0);
+              nextBackground(background-1<0? backgrounds.length-1: background-1);
+            }}
+            ><div /><div /></button>
+              <div id="info">
+                <div className="title">Herlast Photography</div>
+                <progress id="timer" value={timer} max="1000" ></progress>
+                <div id="socials">
+                  <div className="twitter" />
+                  <div className="instagram" />
+                  <div className="patreon" />
+                  <div className="facebook" />
+                </div>
+              </div>
+            <button onClick={() => {
+              nextBackground(background+1>backgrounds.length-1? 0: background+1);
+            }}
+            ><div /><div /></button>
+          </div>
+          <Routes>
+          <Route path = "/home" element = { <Home /> } key = { document.location.href }  />
+            <Route path = "/education" element = { <Education /> } key = { document.location.href }  />
+            <Route path = "/portfolio" element = { <Portfolio /> } key = { document.location.href }  />
+            <Route path = "/contact" element = { <Contact /> } key = { document.location.href }  />
+            <Route path ="*" element = { <Landing /> }
+              key = { document.location.href }
+            />
+          </Routes>
+        </div>
       </div>
     </div>
   );
