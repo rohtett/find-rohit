@@ -9,7 +9,7 @@ import Contact from "./Contact/Contact";
 import "./App.scss";
 
 const menu = ["home", "education", "portfolio", "contact"];
-const backgrounds = ["flowers", "leaves"]
+const backgrounds = ["flowers", "leaves", "mountain", "pond"]
 
 const App = () => {
   const navigate = useNavigate();
