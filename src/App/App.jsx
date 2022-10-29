@@ -91,7 +91,6 @@ const App = () => {
         <div id="article-wrapper">
           <div id="bio">
             <button onClick={() => {
-              setTimer(0);
               nextBackground(background-1<0? backgrounds.length-1: background-1);
             }}
             ><div /><div /></button>
