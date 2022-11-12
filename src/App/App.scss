@@ -162,6 +162,12 @@ body {
         &.pond {
           background-image: url("backgrounds/pond.jpg")
         }
+        &.headlight {
+          background-image: url("backgrounds/headlight.jpg")
+        }
+        &.poppy {
+          background-image: url("backgrounds/poppy.jpg")
+        }
         @include breakpoint1 {
           height: 100vh;
         }

@@ -9,7 +9,7 @@ import Contact from "./Contact/Contact";
 import "./App.scss";
 
 const menu = ["home", "education", "portfolio", "contact"];
-const backgrounds = ["flowers", "leaves", "mountain", "pond"]
+const backgrounds = ["flowers", "leaves", "mountain", "pond", "headlight", "poppy"]
 
 const App = () => {
   const navigate = useNavigate();
@@ -95,7 +95,7 @@ const App = () => {
             }}
             ><div /><div /></button>
               <div id="info">
-                <div className="title">Herlast Photography</div>
+                <div className="title">Rohit Naidu</div>
                 <progress id="timer" value={timer} max="1000" ></progress>
                 <div id="socials">
                   <div className="twitter" />

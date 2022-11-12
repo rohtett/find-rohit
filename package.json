@@ -1,7 +1,7 @@
 {
-  "name": "herlast-photography",
+  "name": "find-rohit",
   "version": "0.1.0",
-  "homepage": "https://rohtett.github.io/herlast-photography/",
+  "homepage": "https://rohtett.github.io/find-rohit/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
