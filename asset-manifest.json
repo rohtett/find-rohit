@@ -1,28 +1,16 @@
 {
   "files": {
-    "main.css": "/herlast-photography/static/css/main.0ce139d3.css",
-    "main.js": "/herlast-photography/static/js/main.3cde57d4.js",
-    "static/js/787.cdef5cd0.chunk.js": "/herlast-photography/static/js/787.cdef5cd0.chunk.js",
-    "static/media/instagram-hover.png": "/herlast-photography/static/media/instagram-hover.7618c0fff7b3af6bac2a.png",
-    "static/media/instagram.png": "/herlast-photography/static/media/instagram.bb8a77bfaa323012e852.png",
-    "static/media/mountain.jpg": "/herlast-photography/static/media/mountain.26a31132e61652d4924e.jpg",
-    "static/media/pond.jpg": "/herlast-photography/static/media/pond.23f885297eb3b6754327.jpg",
-    "static/media/flowers.jpg": "/herlast-photography/static/media/flowers.8ac083062e7d027ff292.jpg",
-    "static/media/leaves.jpg": "/herlast-photography/static/media/leaves.92bad8db9cb71f01e68e.jpg",
-    "static/media/patreon-hover.png": "/herlast-photography/static/media/patreon-hover.40df5f2fbff9d8c3787e.png",
-    "static/media/facebook-hover.png": "/herlast-photography/static/media/facebook-hover.5b4225fa4fc0717dea70.png",
-    "static/media/patreon.png": "/herlast-photography/static/media/patreon.cdb5c0a9ce058af93aaa.png",
-    "static/media/facebook.png": "/herlast-photography/static/media/facebook.4c733b9b89a7b9384bb3.png",
-    "static/media/twitter-hover.png": "/herlast-photography/static/media/twitter-hover.f963dcac51d5020e10f3.png",
-    "static/media/twitter.png": "/herlast-photography/static/media/twitter.27cda7bdfce3369a30e8.png",
-    "static/media/logo.svg": "/herlast-photography/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/herlast-photography/index.html",
-    "main.0ce139d3.css.map": "/herlast-photography/static/css/main.0ce139d3.css.map",
-    "main.3cde57d4.js.map": "/herlast-photography/static/js/main.3cde57d4.js.map",
-    "787.cdef5cd0.chunk.js.map": "/herlast-photography/static/js/787.cdef5cd0.chunk.js.map"
+    "main.css": "/find-rohit/static/css/main.85d38e6f.css",
+    "main.js": "/find-rohit/static/js/main.80220672.js",
+    "static/js/787.93921edc.chunk.js": "/find-rohit/static/js/787.93921edc.chunk.js",
+    "static/media/city.jpg": "/find-rohit/static/media/city.c7ffec3241765eedce2d.jpg",
+    "index.html": "/find-rohit/index.html",
+    "main.85d38e6f.css.map": "/find-rohit/static/css/main.85d38e6f.css.map",
+    "main.80220672.js.map": "/find-rohit/static/js/main.80220672.js.map",
+    "787.93921edc.chunk.js.map": "/find-rohit/static/js/787.93921edc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ce139d3.css",
-    "static/js/main.3cde57d4.js"
+    "static/css/main.85d38e6f.css",
+    "static/js/main.80220672.js"
   ]
 }
