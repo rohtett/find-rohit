@@ -1,0 +1,66 @@
+@mixin breakpoint1 {
+  @media screen and (min-width: 736px) {
+    @content;
+  }
+}
+
+nav#menu {
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  overflow-y: hidden;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  -webkit-box-shadow: 32px 30px 79px -50px rgba(255,255,255,0.5);
+  -moz-box-shadow: 32px 30px 79px -50px rgba(255,255,255,0.5);
+  box-shadow: 32px 30px 79px -50px rgba(255,255,255,0.5);
+  min-width: 150px;
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  transition: transform 0.2s ease-in;
+  @include breakpoint1 {
+    opacity: 0.6;
+  }
+  & ul {
+    width: 100%;
+    height: 40vh;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    list-style-type: none;
+    padding-left: 35px;
+    @include breakpoint1 {
+    }
+    & li {
+      color: white;
+      & a {
+        color: white;
+        text-decoration: none;
+        & input {
+          display: none;
+        }
+      }
+      cursor: pointer;
+      border-right: 3px solid transparent;
+      box-sizing: border-box;
+      padding: 10px;
+      padding-left: 0px;
+      &:hover {
+        font-weight: bolder;
+        border-right: 3px solid white;
+      }
+    }
+  }
+  &.slideOut {
+    transform: translateX(-150px);
+    -ms-transform: translateX(-150px);
+  }
+}

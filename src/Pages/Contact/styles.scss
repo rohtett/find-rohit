@@ -1,0 +1,43 @@
+@mixin breakpoint1 {
+  @media screen and (min-width: 736px) {
+    @content;
+  }
+}
+
+#contact {
+  & form {
+    & .form-field {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      &.checkbox {
+        justify-content: flex-start;
+      }
+      &.textarea {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        overflow: hidden;
+        height: 0px;
+        transition: all 0.4s ease-in;
+        &.open {
+          padding: 20px;
+          height: auto;
+        }
+        & textarea {
+          height: 0px;
+          width: 100%;
+          transition: all 0.4s ease-in;
+          &.open {
+            height: 75px;
+            resize: vertical;
+            overflow-y: auto scroll;
+          }
+        }
+      }
+      &.submit {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

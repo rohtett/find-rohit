@@ -1,0 +1,55 @@
+@mixin breakpoint1 {
+  @media screen and (min-width: 736px) {
+    @content;
+  }
+}
+
+div#Home {
+  left: 0px;
+  top: -25vh;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  @include breakpoint1 {
+    transform: translateY(-35vh);
+  }
+  & div#info {
+    & .title {
+      cursor: pointer;
+      margin-top: 0px;
+      width: 100%;
+      text-align: center;
+      font-size: 3em;
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+    }
+    & #socials {
+      display: flex;
+      justify-content: center;
+      & div {
+        cursor: pointer;
+        margin: 10px;
+        height: 21px;
+        width: 21px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image 0.2s ease-in;
+        &.github {
+          background-image: url("../../Media/github.png");
+          &:hover {
+            background-image: url("../../Media/github-hover.png");
+          }
+        }
+        &.linkedin {
+          background-image: url("../../Media/linkedin.png");
+          &:hover {
+            background-image: url("../../Media/linkedin-hover.png");
+          }
+        }
+      }
+    }
+  }
+}
