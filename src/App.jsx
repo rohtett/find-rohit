@@ -1,43 +1,35 @@
-import logo from './logo.svg';
 import {useState, useEffect} from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import Home from "./Home/Home";
-import Education from "./Education/Education";
-import Portfolio from "./Portfolio/Portfolio";
-import Contact from "./Contact/Contact";
+import Home from "./Components/Home/index";
+import Education from "./Components/Education/index";
+import Portfolio from "./Components/Portfolio/index";
+import Contact from "./Components/Contact/index";
 import "./App.scss";
 
 const menu = ["home", "education", "portfolio", "contact"];
-const backgrounds = ["flowers", "leaves", "mountain", "pond", "headlight", "poppy"]
 
 const App = () => {
   const navigate = useNavigate();
   const [menuState, toggleMenu] = useState(false);
-  const [background, nextBackground] = useState(0);
-  const [timer, setTimer] = useState(0);
 
-  const handleClick = ev => {
+  const handleClick = e => {
     toggleMenu(false);
   }
-  useEffect(() => {
-    setTimeout(()=> {
-      if (timer===1000) {
-        setTimer(0)
-        nextBackground(background+1>backgrounds.length-1? 0: background+1)
-      } else {
-        setTimer(timer+1);
-      }
-    },10)
-  }, [timer])
-  useEffect(()=> {
-    const container = document.getElementById("container");
+  const handleScroll = e => {
+    console.log("scrolling");
+    window.scroll(0,100);
+  }
 
+
+  useEffect(() => {
+    const container = document.getElementById("container");
     container.addEventListener("click", handleClick);
+    document.addEventListener("scroll", handleScroll);
 
     return() => {
       container.removeEventListener("click", handleClick);
-
+      document.addEventListener("scroll", handleScroll);
     }
   },[])
 
@@ -86,28 +78,17 @@ const App = () => {
         </ul>
       </nav>
       <div id="container">
-        <div id="background" className={backgrounds[background]}>
+        <div id="background">
         </div>
         <div id="article-wrapper">
           <div id="bio">
-            <button onClick={() => {
-              nextBackground(background-1<0? backgrounds.length-1: background-1);
-            }}
-            ><div /><div /></button>
               <div id="info">
                 <div className="title">Rohit Naidu</div>
-                <progress id="timer" value={timer} max="1000" ></progress>
                 <div id="socials">
-                  <div className="twitter" />
-                  <div className="instagram" />
-                  <div className="patreon" />
-                  <div className="facebook" />
+                  <div className="github" />
+                  <div className="linkedin" />
                 </div>
               </div>
-            <button onClick={() => {
-              nextBackground(background+1>backgrounds.length-1? 0: background+1);
-            }}
-            ><div /><div /></button>
           </div>
           <Routes>
           <Route path = "/home" element = { <Home /> } key = { document.location.href }  />

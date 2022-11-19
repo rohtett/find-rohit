@@ -138,6 +138,8 @@ body {
       }
     }
     & #container {
+      height: 100%!important;
+      overflow: hidden;
       color: white;
       width: 100%;
       height: 200vh;
@@ -150,24 +152,7 @@ body {
         background-size: cover;
         background-position: center;
         transition: background-image 1s ease-in;
-        &.flowers {
-          background-image: url("backgrounds/flowers.jpg");
-        }
-        &.leaves {
-          background-image: url("backgrounds/leaves.jpg")
-        }
-        &.mountain {
-          background-image: url("backgrounds/mountain.jpg")
-        }
-        &.pond {
-          background-image: url("backgrounds/pond.jpg")
-        }
-        &.headlight {
-          background-image: url("backgrounds/headlight.jpg")
-        }
-        &.poppy {
-          background-image: url("backgrounds/poppy.jpg")
-        }
+        background-image: url("Media/path.jpg");
         @include breakpoint1 {
           height: 100vh;
         }
@@ -189,43 +174,6 @@ body {
           @include breakpoint1 {
             transform: translateY(-35vh);
           }
-          & button {
-            background-color: transparent;
-            border: none;
-            height: 50px;
-            width: 50px;
-            border-radius: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            & div {
-              transition: background-color 0.4s ease-in;
-              border-radius: 3px;
-              height: 3px;
-              width: 25px;
-              background-color: white;
-              position: relative;
-              left: 3px;
-              &:nth-child(odd) {
-                top: 30%;
-                transform: rotate(45deg);
-              }
-              &:nth-child(even) {
-                top: -30%;
-                transform: rotate(-45deg);
-              }
-            }
-            &:nth-child(1) {
-              transform: scaleX(-1);
-            }
-            &:hover {
-              cursor: pointer;
-              & div {
-                background-color: black;
-              }
-            }
-          }
           & div#info {
             & .title {
               cursor: pointer;
@@ -234,61 +182,28 @@ body {
               text-align: center;
               font-size: 3em;
             }
-            & progress#timer {
-              height: 5px;
-              border-radius: 10px;
-              background-color: transparent;
-              width: 100%;
-              border: none;
-            }
-            & progress#timer::-moz-progress-bar {
-               background-color: white!important;
-               border-radius: 10px;
-            }
-            & progress#timer::-webkit-progress {
-              &-bar {
-                background-color: transparent;
-                border-radius: 10px;
-              }
-              &-value {
-                border-radius: 10px;
-                background-color: white;
-              }
-            }
             & #socials {
               display: flex;
               justify-content: center;
               & div {
                 cursor: pointer;
                 margin: 10px;
-                height: 20px;
-                width: 20px;
+                height: 21px;
+                width: 21px;
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
                 transition: background-image 0.4s ease-in;
-                &.instagram {
-                  background-image: url("instagram.png");
+                &.github {
+                  background-image: url("Media/github.png");
                   &:hover {
-                    background-image: url("instagram-hover.png");
+                    background-image: url("Media/github-hover.png");
                   }
                 }
-                &.facebook {
-                  background-image: url("facebook.png");
+                &.linkedin {
+                  background-image: url("Media/linkedin.png");
                   &:hover {
-                    background-image: url("facebook-hover.png");
-                  }
-                }
-                &.twitter {
-                  background-image: url("twitter.png");
-                  &:hover {
-                    background-image: url("twitter-hover.png");
-                  }
-                }
-                &.patreon {
-                  background-image: url("patreon.png");
-                  &:hover {
-                    background-image: url("patreon-hover.png");
+                    background-image: url("Media/linkedin-hover.png");
                   }
                 }
               }
