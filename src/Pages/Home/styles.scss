@@ -1,25 +1,50 @@
 @mixin breakpoint1 {
+  @media screen and (min-width: 249px) {
+    @content;
+  }
+}
+
+@mixin breakpoint2 {
+  @media screen and (min-width: 380px) {
+    @content;
+  }
+}
+
+@mixin breakpoint3 {
   @media screen and (min-width: 736px) {
     @content;
   }
 }
 
-div#Home {
-  left: 0px;
-  top: -25vh;
+@mixin breakpoint4 {
+  @media screen and (min-width: 1050px) {
+    @content;
+  }
+}
+
+#home {
+  height: 40vh;
   width: 100%;
-  position: absolute;
   display: flex;
   justify-content: space-around;
-  @include breakpoint1 {
-    transform: translateY(-35vh);
+  align-items: center;
+  background-color: transparent!important;
+  @include breakpoint3 {
+    height: 100vh;
   }
   & div#info {
+    width: 100%;
+    text-align: center;
+    @include breakpoint2 {
+      width: 70%;
+    }
+    @include breakpoint4 {
+      width: 50%;
+    }
     & .title {
       cursor: pointer;
       margin-top: 0px;
       width: 100%;
-      text-align: center;
       font-size: 3em;
       -webkit-user-select: none; /* Safari */
       -ms-user-select: none; /* IE 10 and IE 11 */

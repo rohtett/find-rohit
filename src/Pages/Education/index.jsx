@@ -1,6 +1,10 @@
+import "./styles.scss";
+
 const Education= () => {
   return (
-    <article />
+    <article id="education">
+      <div>Education</div>
+    </article>
   )
 }
 

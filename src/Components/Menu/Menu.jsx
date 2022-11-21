@@ -1,30 +1,29 @@
-import { Link } from "react-router-dom";
-
 import "./Menu.scss";
 
-const Menu = ({toggleMenu, menuState}) => {
+const Menu = ({toggleMenu, menuState, view, setView}) => {
 
   const menu = ["home", "education", "portfolio", "contact"];
 
   return (
     <nav id="menu" className={menuState? "":"slideOut"}>
-      <ul onClick={() => {
-        toggleMenu(false);
-      }}>
+      <ul>
         { menu.map((item) => (
-          <label
-          htmlFor = { item } key = { item } >
-            <li>
-              <Link to={"#"+item}>
-                <input type = "radio" readOnly
-                  className="menu" name = "menu"
-                  value = { item } id = { item }
-                  checked = { item.index === item }
-                />
-                { item.at(0).toUpperCase()+item.slice(1,item.length) }
-              </Link>
-            </li>
-          </label>
+          <li key = {item}>
+            <input type = "radio" readOnly
+              className="menu" name = "menu"
+              value = { item } id = { item }
+              checked = { view === item }
+              onClick={() => {
+                toggleMenu(false);
+              }}
+            />
+            <label htmlFor = { item }
+              onClick = {() => {setView(item)}
+            }>
+              <div>{item.at(0).toUpperCase()+item.slice(1,item.length) }
+              </div>
+            </label>
+          </li>
           ))}
       </ul>
     </nav>

@@ -1,5 +1,4 @@
 import {useState, useEffect} from "react";
-import { Route, Switch, useLocation } from "react-router-dom";
 
 import "./App.scss";
 
@@ -15,23 +14,8 @@ import Contact from "./Pages/Contact/index";
 
 const App = () => {
 
+  const [view, setView] = useState("home");
   const [menuState, toggleMenu] = useState(false);
-
-  const { pathname, hash, key } = useLocation();
-
-  useEffect(() => {
-    if (hash ==="") {
-      window.scrollTo(0, 0);
-    } else {
-      setTimeout(() => {
-        const id = hash.replace("#", "");
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView();
-        }
-      }, 0)
-    }
-  }, [pathname, hash, key])
 
   const _handleClick = e => {
     toggleMenu(false);
@@ -43,27 +27,36 @@ const App = () => {
   }
 
   useEffect(() => {
-    const container = document.getElementById("container");
-    container.addEventListener("click", _handleClick);
+    document.querySelector(`article#${view}`).scrollIntoView({behavior:"smooth"})
+  }, [view])
+  useEffect(() => {
     window.addEventListener("scrollDown", _handleScroll);
-
     return() => {
-      container.removeEventListener("click", _handleClick);
       window.addEventListener("scroll", _handleScroll);
     }
-  },[])
+  })
+
+  useEffect(() => {
+    const container = document.getElementById("container");
+    container.addEventListener("click", _handleClick);
+    return() => {
+      container.removeEventListener("click", _handleClick);
+    }
+  },[menuState])
 
   return (
     <div className="App">
       <header>
         <Hamburger menuState={menuState} toggleMenu={toggleMenu} />
       </header>
-      <Menu menuState={menuState} toggleMenu={toggleMenu} />
+      <Menu menuState={menuState} toggleMenu={toggleMenu} view={view} setView={setView} />
       <div id="container">
-        <div id="background">
-        </div>
+        <div id="background" />
+        <Home />
         <div id="article-wrapper">
-          <Home />
+          <Education />
+          <Portfolio />
+          <Contact />
         </div>
       </div>
     </div>

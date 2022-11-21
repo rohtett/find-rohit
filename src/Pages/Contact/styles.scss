@@ -1,42 +1,147 @@
-@mixin breakpoint1 {
+@mixin breakpoint2 {
+  @media screen and (min-width: 380px) {
+    @content;
+  }
+}
+@mixin breakpoint3 {
   @media screen and (min-width: 736px) {
     @content;
   }
 }
 
 #contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include breakpoint3 {
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+  }
+  & > div {
+    max-width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include breakpoint3 {
+      padding-top: 18px;
+      max-width: none;
+    }
+    & h1 {
+      text-align: center;
+      margin-top: 0px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid white;
+    }
+    & section#details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-bottom: 20px;
+      & > div {
+        & .marker {
+          display: inline-block;
+          height: 21px;
+          width: 21px;
+          filter: invert(100%);
+          background-size: contain;
+          background-position: center;
+          padding-right: 5px;
+          background-repeat: no-repeat;
+          position: relative;
+          top: 5px;
+          &.location {
+            background-image: url("../../Media/location.png");
+          }
+          &.e-mail {
+            background-image: url("../../Media/email.png");
+          }
+          &.phone {
+            background-image: url("../../Media/phone.png");
+          }
+        }
+      }
+    }
+    &#blurb {
+
+    }
+  }
   & form {
     & .form-field {
-      padding: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-width: 300px;
       display: flex;
-      justify-content: space-between;
-      width: 300px;
+      flex-direction: column;
+      & label {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      @include breakpoint2 {
+        padding: 20px;
+      }
+      & input {
+        color: white;
+        background-color: black;
+        border: none;
+        max-width: 100%;
+        border-bottom: 1px solid transparent;
+        border-bottom: 1px solid white;
+        &:hover {
+          border-bottom: 1px solid transparent;
+        }
+        &:active, &:focus {
+        }
+      }
       &.checkbox {
+        align-items: flex-start;
+        flex-direction: row;
+        & label {
+          cursor: pointer;
+          display: block;
+        }
+        & input {
+          cursor: pointer;
+        }
         justify-content: flex-start;
       }
       &.textarea {
         padding-top: 0px;
         padding-bottom: 0px;
         overflow: hidden;
-        height: 0px;
-        transition: all 0.4s ease-in;
-        &.open {
-          padding: 20px;
-          height: auto;
-        }
+        min-height: 75px;
+        max-width: 300px;
+        height: auto;
         & textarea {
-          height: 0px;
-          width: 100%;
-          transition: all 0.4s ease-in;
-          &.open {
-            height: 75px;
-            resize: vertical;
-            overflow-y: auto scroll;
+          font-family: "roboto", sans-serif;
+          height: 75px;
+          resize: vertical;
+          background-color: black;
+          border: none;
+          color: white;
+          border-bottom: 1px solid white;
+          &:disabled {
+            resize: none;
+            border-bottom: 1px solid transparent!important;
+          }
+          &:hover {
+            border-bottom: 1px solid transparent;
+          }
+          &:active, &:focus {
           }
         }
       }
       &.submit {
-        justify-content: flex-end;
+        & button {
+          background-color: black;
+          color: white;
+          border: 1px solid transparent;
+          border-bottom: 1px solid white;
+          &:hover {
+            cursor: pointer;
+            border: 1px solid transparent;
+          }
+        }
       }
     }
   }

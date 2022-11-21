@@ -1,6 +1,10 @@
+import "./styles.scss";
+
 const Portfolio = () => {
   return (
-    <article />
+    <article id="portfolio">
+      <div> Portfolio</div>
+    </article>
   )
 }
 
