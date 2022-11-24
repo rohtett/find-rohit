@@ -12,33 +12,43 @@ import Education from "./Pages/Education/index";
 import Portfolio from "./Pages/Portfolio/index";
 import Contact from "./Pages/Contact/index";
 
+const _throttle = require("lodash.throttle");
+
 const App = () => {
 
-  const [view, setView] = useState("home");
+  const [view, setView] = useState(0);
   const [menuState, toggleMenu] = useState(false);
+  const [lastScroll, setScroll] = useState(0);
+  const [ticking, setTicking] = useState(false);
+
+  const menu = ["home", "education", "portfolio", "contact"];
 
   const _handleClick = e => {
     toggleMenu(false);
   }
 
-  const _handleScroll = e => {
-    toggleMenu(false);
-    console.log("scrolling");
-  }
+  const _handleScroll = _throttle(e => {
+    console.log("scroll");
+  }, 2000, {trailing: true, leading: true});
+
+
 
   useEffect(() => {
-    document.querySelector(`article#${view}`).scrollIntoView({behavior:"smooth"})
-  }, [view])
-  useEffect(() => {
-    window.addEventListener("scrollDown", _handleScroll);
+    console.log(`scrolling to article#${menu[view]}`)
+    document.querySelector(`article#${menu[view]}`).scrollIntoView({behavior:"smooth"})
+
+    window.addEventListener("scroll", _handleScroll);
+
     return() => {
-      window.addEventListener("scroll", _handleScroll);
+      window.removeEventListener("scroll", _handleScroll);
     }
-  })
+  }, [view])
 
   useEffect(() => {
     const container = document.getElementById("container");
+
     container.addEventListener("click", _handleClick);
+
     return() => {
       container.removeEventListener("click", _handleClick);
     }
@@ -49,10 +59,10 @@ const App = () => {
       <header>
         <Hamburger menuState={menuState} toggleMenu={toggleMenu} />
       </header>
-      <Menu menuState={menuState} toggleMenu={toggleMenu} view={view} setView={setView} />
+      <Menu menu={menu} menuState={menuState} toggleMenu={toggleMenu} view={view} setView={setView} />
       <div id="container">
         <div id="background" />
-        <Home />
+        <Home lastScroll={lastScroll} view={view} />
         <div id="article-wrapper">
           <Education />
           <Portfolio />

@@ -1,13 +1,11 @@
 import "./Menu.scss";
 
-const Menu = ({toggleMenu, menuState, view, setView}) => {
-
-  const menu = ["home", "education", "portfolio", "contact"];
+const Menu = ({toggleMenu, menuState, view, setView, menu}) => {
 
   return (
     <nav id="menu" className={menuState? "":"slideOut"}>
       <ul>
-        { menu.map((item) => (
+        { menu.map((item, id) => (
           <li key = {item}>
             <input type = "radio" readOnly
               className="menu" name = "menu"
@@ -18,7 +16,7 @@ const Menu = ({toggleMenu, menuState, view, setView}) => {
               }}
             />
             <label htmlFor = { item }
-              onClick = {() => {setView(item)}
+              onClick = {() => {setView(id)}
             }>
               <div>{item.at(0).toUpperCase()+item.slice(1,item.length) }
               </div>
