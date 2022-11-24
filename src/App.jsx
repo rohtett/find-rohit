@@ -28,7 +28,16 @@ const App = () => {
   }
 
   const _handleScroll = _throttle(e => {
-    console.log("scroll");
+    toggleMenu(false);
+    setScroll(window.pageYOffset);
+    //scroll down
+    setTicking(true);
+    if (lastScroll < window.pageYOffset) {
+      setView(view + 1);
+    //scroll up
+    } else if (lastScroll > window.pageYOffset) {
+      console.log("scroll up")
+    }
   }, 2000, {trailing: true, leading: true});
 
 
