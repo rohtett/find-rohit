@@ -23,14 +23,14 @@
 }
 
 #home {
-  height: 40vh;
+  height: 40vh!important;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: transparent!important;
   @include breakpoint3 {
-    height: 100vh;
+    height: 100vh!important;
   }
   & div#info {
     width: 100%;
