@@ -1,6 +1,6 @@
 import "./styles.scss";
 const menu = ["home", "education", "portfolio", "contact"];
-const Home = (props) => {
+const Home = () => {
   return (
     <article id="home" title = "home">
         <div id="info">
@@ -13,7 +13,6 @@ const Home = (props) => {
               <div className="linkedin" />
             </a>
           </div>
-          {props.lastScroll + menu[props.view]}
           <article>
             Front-end React developer with an interest in creating functional and responsive web apps with the latest practices and technologies. Looking to gain experience in Junior Web Development opportunities.
           </article>

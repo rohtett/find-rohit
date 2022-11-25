@@ -31,34 +31,33 @@ body {
       @include breakpoint3 {
       }
     }
-    & #container {
-      height: 100%!important;
-      color: white;
-      width: 100%;
-      height: 200vh;
-      & #background {
-        position: fixed;
-        z-index: -1;
-        width: 100vw;
-        height: 40vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-image: url("Media/path.jpg");
-        @include breakpoint3 {
-          height: 100vh;
-        }
+    & #background {
+      position: fixed;
+      z-index: -1;
+      width: 100vw;
+      height: 40vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("Media/path.jpg");
+      @include breakpoint3 {
+        height: 100vh;
       }
-      & #article-wrapper {
-        z-index: 1;
-        width: 100vw;
-        & > article {
-          margin-left: auto;
-          margin-right: auto;
-          height: 100vh;
-          width: 100%;
-          background-color: black;
-        }
+    }
+    & #container {
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      scroll-snap-type: y mandatory;
+      color: white;
+      height: 100vh;
+      width: 100%;
+      & > article {
+        scroll-snap-align: start;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100vh;
+        width: 100%;
+        background-color: black;
       }
     }
   }
