@@ -19,6 +19,7 @@ body {
   @include breakpoint3 {
   }
   & .App {
+    font-size: 0.9em;
     height: 100vh;
     @include breakpoint3 {
     }
@@ -63,6 +64,10 @@ body {
         height: 100vh;
         width: 100%;
         background-color: black;
+        & > .wrapper {
+          height: 85%;
+          width: 85%;
+        }
       }
     }
   }

@@ -19,7 +19,7 @@
     flex-direction: row-reverse;
   }
   & > div {
-    max-width: 300px;
+    max-width: 100%;
     padding-left: 20px;
     padding-right: 20px;
     @include breakpoint3 {
