@@ -1,7 +1,7 @@
 {
   "name": "find-rohit",
   "version": "0.1.0",
-  "homepage": "https://rohtett.github.io/find-rohit/",
+  "homepage": "https://rohtett.co.uk",
   "private": true,
   "dependencies": {
     "@formspree/react": "^2.4.1",
