@@ -19,26 +19,6 @@ const App = () => {
 
   const menu = ["home", "education", "portfolio", "contact"];
 
-  const _handleScroll = e => {
-    console.log("scroll");
-    toggleMenu(false);
-    setView(prev => updateView(prev, window.pageYOffset));
-  }
-
-  const updateView = (prev, offset) => {
-    if (offset < offset) {
-      //scroll down
-      console.log("scroll down");
-      if (prev < menu.length - 1) return view + 1;
-      else return menu.length - 1;
-    } else if (offset > offset) {
-      //scroll up
-      console.log("scroll up")
-      if (prev - 1 < 0) return 0;
-      else return prev - 1;
-    }
-  }
-
   useEffect(() => {
     document.querySelector(`article#${menu[view]}`).scrollIntoView({behavior:"smooth"})
   }, [view])
@@ -51,10 +31,10 @@ const App = () => {
       <Menu menu={menu} menuState={menuState} toggleMenu={toggleMenu} view={view} setView={setView} />
       <div id="background" />
       <div id="container">
-        <Home />
-        <Education />
-        <Portfolio />
-        <Contact />
+        <Home menu = { menu } view = { view } setView = { setView } />
+        <Education menu = { menu } view = { view } setView = { setView } />
+        <Portfolio menu = { menu } view = { view } setView = { setView } />
+        <Contact menu = { menu } view = { view } setView = { setView } />
       </div>
     </div>
   );

@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import "./styles.scss";
 import shadow from "../../Media/shadow.png";
+import PageDown from "../../Components/PageDown"
 
-const Portfolio = () => {
+const Portfolio = ({ view, menu, setView }) => {
   useEffect(() => {
 
   })
 
   const [project, setProject] = useState("shadow");
-
   return (
     <article id="portfolio">
       <div className="wrapper">
@@ -58,6 +58,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+      <PageDown view = { view } menu = { menu } setView = { setView } />
     </article>
   )
 }

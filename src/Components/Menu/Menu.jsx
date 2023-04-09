@@ -25,15 +25,16 @@ const Menu = ({toggleMenu, menuState, view, setView, menu}) => {
             <input type = "radio" readOnly
               className="menu" name = "menu"
               value = { item } id = { item }
-              checked = { view === item }
+              checked = { view === id }
+              onChange = {() => {
+                setView(id)
+              }}
               onClick={() => {
                 toggleMenu(false);
               }}
             />
-            <label htmlFor = { item }
-              onClick = {() => {setView(id)}
-            }>
-              <div>{item.at(0).toUpperCase()+item.slice(1,item.length) }
+            <label htmlFor = { item } >
+              <div> { item.at(0).toUpperCase()+item.slice(1,item.length) }
               </div>
             </label>
           </li>

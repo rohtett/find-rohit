@@ -1,8 +1,9 @@
 import "./styles.scss";
-const menu = ["home", "education", "portfolio", "contact"];
-const Home = () => {
+import PageDown from "../../Components/PageDown"
+
+const Home = ({ menu, view, setView }) => {
   return (
-    <article id="home" title = "home">
+    <article id="home">
         <div id="info">
             <div className="title">Rohit Naidu</div>
           <div id="socials">
@@ -18,6 +19,7 @@ const Home = () => {
           </article>
           <div></div>
         </div>
+        <PageDown view = { view } menu = { menu } setView = { setView } />
     </article>
   )
 }

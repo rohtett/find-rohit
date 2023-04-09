@@ -50,12 +50,12 @@ nav#menu {
             align-items: center;
           }
           &:hover div {
-              font-weight: bolder;
-              border-right: 3px solid white;
+            font-weight: bolder;
+            border-right: 3px solid white;
           }
         }
         &:checked + label div {
-          border-right: 3px solid white;
+          border-right: 3px solid grey;
           font-weight: bolder;
         }
       }
