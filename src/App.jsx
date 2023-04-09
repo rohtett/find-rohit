@@ -21,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     document.querySelector(`article#${menu[view]}`).scrollIntoView({behavior:"smooth"})
-  }, [view])
+  }, [view, menu])
 
   return (
     <div className="App">

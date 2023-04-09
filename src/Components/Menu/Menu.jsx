@@ -15,7 +15,7 @@ const Menu = ({toggleMenu, menuState, view, setView, menu}) => {
     return() => {
       container.removeEventListener("click", _handleClick);
     }
-  },[menuState])
+  },[menuState, _handleClick])
 
   return (
     <nav id="menu" className={menuState? "":"slideOut"}>
