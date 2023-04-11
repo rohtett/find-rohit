@@ -16,7 +16,7 @@ const Home = ({ menu, view, setView }) => {
           </a>
         </div>
         <article>
-          Front-end React developer with an interest in creating functional and responsive web apps with the latest practices and technologies. Looking to gain experience in Junior Web Development opportunities.
+          Front-End React developer with an interest in creating functional and responsive web apps with the latest practices and technologies. Looking to gain experience in Junior Web Development opportunities.
         </article>
         <div></div>
       </div>

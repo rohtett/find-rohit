@@ -13,8 +13,8 @@ const Contact = ({ view, setView }) => {
 
   return (
     <article id="contact" >
+      <PageUp view = { view } setView = { setView } />
       <div className="wrapper">
-        <PageUp view = { view } setView = { setView } />
         <div>
           <h1>Rohit Naidu</h1>
           <div id="socials">
@@ -96,6 +96,7 @@ const Contact = ({ view, setView }) => {
           )
         }
       </div>
+      <div />
     </article>
   )
 }

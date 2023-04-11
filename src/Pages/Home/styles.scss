@@ -36,6 +36,11 @@
   & div#info {
     width: 100%;
     text-align: center;
+
+    & > * {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     @include breakpoint2 {
       width: 70%;
     }
@@ -45,7 +50,6 @@
     & .title {
       cursor: pointer;
       margin-top: 0px;
-      width: 100%;
       font-size: 3em;
       -webkit-user-select: none; /* Safari */
       -ms-user-select: none; /* IE 10 and IE 11 */

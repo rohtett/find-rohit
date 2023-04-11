@@ -25,7 +25,7 @@
           width: 34px;
           height: 3px;
           background-color: white;
-          transition: transform 0.4s ease-in 0.2s, top 0.4s ease-in 0.4s, opacity 0.4s ease-out 0.4s, background-color 0.4s ease-in;
+          transition: transform 0.4s ease-in 0.2s, top 0.4s ease-in 0.4s, opacity 0.4s ease-out 0.4s, background-color 0.4s ease-in, left 0.4s;
         }
       }
       &:hover {
@@ -45,7 +45,7 @@
           & .hamburger.layers {
             background-color: white!important;
             position: relative;
-            transition: transform 0.4s ease-out 0.2s, top 0.4s ease-out, opacity 0.4s ease-in 0.1s;
+            transition: transform 0.4s ease-out 0.2s, top 0.4s ease-out, opacity 0.4s ease-in 0.1s, left 0.4s;
           }
           & .hamburger.layers:nth-child(1) {
             top: 11.5px;
