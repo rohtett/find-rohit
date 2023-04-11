@@ -23,7 +23,7 @@
 }
 
 #home {
-  height: 40vh!important;
+  height: 100vh!important;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,6 @@
   justify-content: flex-end;
   background-color: transparent!important;
   @include breakpoint3 {
-    height: 100vh!important;
   }
   & div#info {
     width: 100%;

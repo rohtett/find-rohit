@@ -36,13 +36,12 @@ body {
       position: fixed;
       z-index: -1;
       width: 100vw;
-      height: 20vh;
+      height: 100vh;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       background-image: url("Media/path.jpg");
       @include breakpoint3 {
-        height: 100vh;
       }
     }
     & #container {
