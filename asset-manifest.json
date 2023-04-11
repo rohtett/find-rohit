@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/find-rohit/static/css/main.447e7026.css",
-    "main.js": "/find-rohit/static/js/main.cd695f9c.js",
-    "static/js/787.93921edc.chunk.js": "/find-rohit/static/js/787.93921edc.chunk.js",
-    "static/media/path.jpg": "/find-rohit/static/media/path.490ff30399508c320d1f.jpg",
-    "index.html": "/find-rohit/index.html",
-    "main.447e7026.css.map": "/find-rohit/static/css/main.447e7026.css.map",
-    "main.cd695f9c.js.map": "/find-rohit/static/js/main.cd695f9c.js.map",
-    "787.93921edc.chunk.js.map": "/find-rohit/static/js/787.93921edc.chunk.js.map"
+    "main.css": "/static/css/main.6d3ac5ca.css",
+    "main.js": "/static/js/main.5e09f7e6.js",
+    "static/js/787.93921edc.chunk.js": "/static/js/787.93921edc.chunk.js",
+    "static/media/path.jpg": "/static/media/path.490ff30399508c320d1f.jpg",
+    "static/media/aws-certified-cloud-practitioner.png": "/static/media/aws-certified-cloud-practitioner.8df626edbadb2b205a72.png",
+    "static/media/aws-re-start-graduate.png": "/static/media/aws-re-start-graduate.4afbe4b4c93a403c41dc.png",
+    "static/media/shadow.png": "/static/media/shadow.08e1b3680823e76b47c8.png",
+    "index.html": "/index.html",
+    "main.6d3ac5ca.css.map": "/static/css/main.6d3ac5ca.css.map",
+    "main.5e09f7e6.js.map": "/static/js/main.5e09f7e6.js.map",
+    "787.93921edc.chunk.js.map": "/static/js/787.93921edc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.447e7026.css",
-    "static/js/main.cd695f9c.js"
+    "static/css/main.6d3ac5ca.css",
+    "static/js/main.5e09f7e6.js"
   ]
 }
